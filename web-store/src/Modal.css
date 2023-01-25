@@ -1,0 +1,37 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+.modalContainer {
+    width: 700px;
+    height: 700px;
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.cartTitle {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cartContainer {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.closeModalButton {
+    display: flex;
+    justify-content: flex-end;
+} 

@@ -1,30 +1,35 @@
 import React from 'react';
 import { AppBar, Button, ButtonGroup, Card, CardActions, CardContent, CardMedia, CssBaseline, Toolbar, Container, Typography, Grid } from '@material-ui/core';
-
+import './App.css';
+import Modal from './Modal.js';
+import { useState } from 'react';
+import './App.css';
 
 const App = () => {
+
+    const [openModal, setOpenModal] = useState(false)
 return (
     <>
     <CssBaseline />
     <header>
     <AppBar postition="relative">
         <Toolbar>
-        <Typography variant="h4">Clothes Shop</Typography>
+        <Typography className="shopLogo" variant="h1">raiment</Typography>
         <Container>
  <ButtonGroup variant="contained" align="right">
-    <Button>Home</Button>
-    <Button>Shop</Button>
-    <Button>Sign In</Button>
-    <Button>Your Cart</Button>
+    <Container className="modalSection">
+        <Button variant="contained" className="openModalButton" onClick={() => {
+            setOpenModal(true);
+            }}>Cart</Button>
+            {openModal && <Modal closeModal={(setOpenModal)} /> }
+        </Container>
  </ButtonGroup>
     </Container>
         </Toolbar>
     </AppBar>
     </header>
     <main>
-        <Container>
 
-        </Container>
         <Container>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6} md={4}>
@@ -40,8 +45,8 @@ return (
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Typography variant="h5">$17.99</Typography>
                             <Button>Add To Cart</Button>
-                            <Button>Info</Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -58,8 +63,8 @@ return (
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Typography variant="h5">$34.99</Typography>
                             <Button>Add To Cart</Button>
-                            <Button>Info</Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -76,8 +81,8 @@ return (
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Typography variant="h5">$79.99</Typography>
                             <Button>Add To Cart</Button>
-                            <Button>Info</Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -94,14 +99,17 @@ return (
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Typography variant="h5">$12.99</Typography>
                             <Button>Add To Cart</Button>
-                            <Button>Info</Button>
                         </CardActions>
                     </Card>
                 </Grid>
             </Grid>
         </Container>
         </main>
+        <footer>
+
+        </footer>
         </>
 );
 }
